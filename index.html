@@ -202,16 +202,15 @@
   }
   .doc-card .doc-card-header a:hover { text-decoration: underline; }
   .doc-body {
-    max-height: 780px;
-    overflow-y: auto;
     background: #EDEFF3;
+    height: 780px;
   }
-  .doc-body img {
+  .doc-body iframe {
     display: block;
     width: 100%;
-    border-bottom: 1px solid #D8DCE4;
+    height: 100%;
+    border: none;
   }
-  .doc-body img:last-child { border-bottom: none; }
   .doc-empty {
     padding: 60px 24px;
     text-align: center;
@@ -313,8 +312,8 @@
     {
       name: "PayCode",
       stage: "Due Diligence",
-      onepager: "paycode-onepager.jpg",
-      screening: "paycode-screening.jpg"
+      onepager: "paycode-onepager.pdf",
+      screening: "paycode-screening.pdf"
     },
     { name: "CubeSpace", stage: "Due Diligence" },
     { name: "Ikue", stage: "Due Diligence" }
@@ -353,7 +352,7 @@
 
   function docBlock(bodyEl, linkEl, filename, altText) {
     if (filename) {
-      bodyEl.innerHTML = '<img src="' + filename + '" alt="' + altText + '">';
+      bodyEl.innerHTML = '<iframe src="' + filename + '" title="' + altText + '"></iframe>';
       linkEl.href = filename;
       linkEl.style.display = "inline";
     } else {
