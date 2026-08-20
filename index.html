@@ -324,7 +324,7 @@
   }
   COMPANIES.forEach(function (c) { c.slug = slugify(c.name); });
 
-  const STAGES = ["Top of the Funnel", "On-Ramp / Ones to Watch", "Pre-Screening + Timing", "Due Diligence"];
+  const STAGES = ["Due Diligence", "Pre-Screening + Timing", "On-Ramp / Ones to Watch", "Top of the Funnel"];
 
   function renderBoard() {
     const grid = document.getElementById("boardGrid");
